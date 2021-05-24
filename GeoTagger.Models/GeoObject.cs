@@ -12,10 +12,11 @@ namespace GeoTagger.Models
         [Required]
         public string Name { get; set; } = null!;
 
-        public bool? Prefix { get; set; }
+        [Required]
+        public bool Prefix { get; set; } = true;
 
         public override string ToString() =>
-            (Prefix != null && Prefix == true) ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
+            Prefix ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
     }
 
 }
