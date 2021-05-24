@@ -9,13 +9,13 @@ namespace GeoTagger.Models
         public Guid Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public string Subtitle { get; set; }
+        public string? Subtitle { get; set; }
 
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
-        public Address Address { get; set; }
+        public Address? Address { get; set; }
 
         [Required]
         public GeoCoord Coord { get; set; }

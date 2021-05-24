@@ -8,22 +8,22 @@ namespace GeoTagger.Models
     public class Address
     {
         [Required]
-        public string Country { get; set; }
+        public string Country { get; set; } = null!;
 
-        public GeoObject State { get; set; }
-
-        [Required]
-        public GeoObject City { get; set; }
+        public GeoObject? State { get; set; }
 
         [Required]
-        public GeoObject Street { get; set; }
+        public GeoObject City { get; set; } = null!;
 
         [Required]
-        public GeoObject House { get; set; }
+        public GeoObject Street { get; set; } = null!;
 
-        public GeoObject Block { get; set; }
+        [Required]
+        public GeoObject House { get; set; } = null!;
 
-        public GeoObject Room { get; set; }
+        public GeoObject? Block { get; set; } 
+
+        public GeoObject? Room { get; set; } 
 
         public override string ToString()
         {

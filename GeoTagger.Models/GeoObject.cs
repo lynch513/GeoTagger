@@ -7,15 +7,15 @@ namespace GeoTagger.Models
     public class GeoObject
     {
         [Required]
-        public GeoType Type { get; set; }
+        public GeoType Type { get; set; } = null!;
 
         [Required]
-        public string Name { get; set; }
+        public string Name { get; set; } = null!;
 
-        public bool Prefix { get; set; }
+        public bool? Prefix { get; set; }
 
         public override string ToString() =>
-            Prefix ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
+            (Prefix != null && Prefix == true) ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
     }
 
 }
