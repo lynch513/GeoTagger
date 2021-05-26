@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GeoTagger.Repositories
 {
-    public class TagRepository
+    public class TagRepository : ITagRepository
     {
         protected readonly AppDbContext context;
 
