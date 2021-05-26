@@ -38,10 +38,8 @@ namespace GeoTagger.Repositories
         public Tag? Get(Guid id) =>
             context.Find<Tag>(id);
 
-        public Tag? GetByName(string name)
-        {
-            throw new NotImplementedException();
-        }
+        public Tag? GetByName(string name) =>
+            context.Tags.Where(i => i.Name == name).FirstOrDefault();
 
         public IEnumerable<Tag> GetAll() =>
             context.Tags;
@@ -49,13 +47,54 @@ namespace GeoTagger.Repositories
         // Update
         public bool TryUpdate(Tag item, out string? message)
         {
-            throw new NotImplementedException();
+            try
+            {
+                //var local = context
+                //    .Tags
+                //    .Local
+                //    .FirstOrDefault(e => e.Id == item.Id);
+
+                //if (local != null)
+                //{
+                //    context.Entry(local).State = EntityState.Detached;
+                //}
+
+                //context.Entry(item).State = EntityState.Modified;
+                context.Tags.Update(item);
+
+                context.SaveChanges();
+
+                message = default;
+                return true;
+            }
+            catch (DbUpdateException ex)
+            {
+                message = ex.Message;
+                return false;
+            }
         }
 
         // Delete
-        public bool TryRemove(Guid id, out string? message)
+        public bool TryRemove(Tag item, out string? message)
         {
-            throw new NotImplementedException();
+            try
+            {
+                context.Remove(item);
+                context.SaveChanges();
+
+                message = default;
+                return true;
+            }
+            catch (InvalidOperationException ex)
+            {
+                message = ex.Message;
+                return false;
+            }
+            catch (DbUpdateException ex)
+            {
+                message = ex.Message;
+                return false;
+            }
         }
     }
 }
