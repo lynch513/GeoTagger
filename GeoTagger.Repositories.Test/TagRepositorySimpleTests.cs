@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace GeoTagger.Repositories.Test
 {
-    public class TagRepositoryTests
+    public class TagRepositorySimpleTests
     {
         private static AppDbContext CreateDbContext(string? dbName = default)
         {
