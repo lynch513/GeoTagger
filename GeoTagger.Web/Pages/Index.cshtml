@@ -4,7 +4,70 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*<partial name="_FormResult" model="Model.FormResult" />*@
+
+<div class="row">
+    <div class="col-6">
+        <h2>Список объектов</h2>
+    </div>
+    @*<div class="col-6 text-right mt-1">
+        <a asp-page="Create"
+           class="btn btn-sm btn-secondary">Добавить</a>
+    </div>*@
+</div>
+
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped border">
+            <tr class="table-secondary">
+                <th class="ud-table-buttons">
+                    @Html.DisplayNameFor(m => Model.Items[0].Name)
+                </th>
+                <th class="ud-table-buttons">
+                    @Html.DisplayNameFor(m => Model.Items[0].Subtitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => Model.Items[0].Address)
+                </th>
+                <th class="ud-table-buttons">
+                </th>
+            </tr>
+            @if (Model.Items.Count() > 0)
+            {
+                @foreach (var item in Model.Items)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => item.Subtitle)
+                        </td>
+                        <td>
+                            @(item.Address?.ToString() ?? "")
+                        </td>
+                        <td>
+                            @*<div class="btn-group btn-group-sm" role="group">
+                            <a asp-page="Edit" asp-route-Id="@item.Id" class="btn btn-primary">
+                                Изменить
+                            </a>
+                            <a asp-page="Delete" asp-route-Id="@item.Id" class="btn btn-danger">
+                                Удалить
+                            </a>
+                        </div>*@
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>Список пуст</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            }
+        </table>
+    </div>
 </div>

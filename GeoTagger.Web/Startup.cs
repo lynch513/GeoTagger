@@ -37,6 +37,8 @@ namespace GeoTagger.Web
                 options.UseNpgsql(builder.ConnectionString)
                 );
 
+            services.AddScoped<ITagRepository, TagRepository>();
+
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddMvc();
         }
