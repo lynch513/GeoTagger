@@ -16,7 +16,13 @@ namespace GeoTagger.Models
         public bool Prefix { get; set; } = true;
 
         public override string ToString() =>
-            Prefix ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
+            (Prefix, Type.Reduction) switch
+            {
+                (true, null) => string.Concat(Type, " ", Name),
+                (false, null) => string.Concat(Name, " ", Type),
+                (_, not null) => string.Concat(Type, ".", Name)
+            };
+            // Prefix ? string.Concat(Type, " ", Name) : string.Concat(Name, " ", Type);
     }
 
 }

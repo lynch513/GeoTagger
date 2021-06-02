@@ -42,5 +42,24 @@ namespace GeoTagger.Models.Test
             Assert.IsTrue(sut.Prefix);
         }
 
+        [Test]
+        public void Model_Show_Type_And_Name_With_Dot_If_Has_Type_Reduction()
+        {
+            var sut = new GeoObject()
+            {
+                Type = new GeoType() { 
+                    Name = "TypeName",
+                    Reduction = "TN"
+                },
+                Name = "Name",
+                Prefix = true
+            };
+
+            Assert.AreEqual("TN.Name", sut.ToString());
+
+            sut.Prefix = false;
+            Assert.AreEqual("TN.Name", sut.ToString());
+        }
+
     }
 }
