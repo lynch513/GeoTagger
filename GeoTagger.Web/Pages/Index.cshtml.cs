@@ -20,6 +20,9 @@ namespace GeoTagger.Web.Pages
 
         public List<Tag> Items { get; set; }
 
+        [ViewData]
+        public string Title { get; } = "Главная";
+
         public IndexModel(ILogger<IndexModel> logger, ITagRepository tagRepository)
         {
             this.logger = logger;
@@ -29,7 +32,6 @@ namespace GeoTagger.Web.Pages
         public void OnGet()
         {
             Items = tagRepository.GetAll().ToList();
-            //Items = new List<Tag> { };
         }
     }
 }

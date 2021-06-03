@@ -1,0 +1,12 @@
+﻿@page "{id:guid}"
+@model GeoTagger.Web.Areas.User.Pages.Tags.EditModel
+
+<partial name="_PageTitle" model="Model.Title" />
+
+<form method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    @if (Model.Item.Id != default(Guid))
+    {
+        <input type="hidden" asp-for="Item.Id" />
+    }
+</form>

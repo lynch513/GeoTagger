@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.6.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTagger.Models", "GeoTagger.Models\GeoTagger.Models.csproj", "{06B3EA2D-133D-4B38-B85C-F56F29503C56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoTagger.Models", "GeoTagger.Models\GeoTagger.Models.csproj", "{06B3EA2D-133D-4B38-B85C-F56F29503C56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTagger.Models.Test", "GeoTagger.Models.Test\GeoTagger.Models.Test.csproj", "{0ED6AC50-4276-46D6-8769-20480454DE35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoTagger.Models.Test", "GeoTagger.Models.Test\GeoTagger.Models.Test.csproj", "{0ED6AC50-4276-46D6-8769-20480454DE35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTagger.Repositories", "GeoTagger.Repositories\GeoTagger.Repositories.csproj", "{D22A0283-112A-4C82-8866-C6D97BEC6CC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoTagger.Repositories", "GeoTagger.Repositories\GeoTagger.Repositories.csproj", "{D22A0283-112A-4C82-8866-C6D97BEC6CC8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTagger.Repositories.Test", "GeoTagger.Repositories.Test\GeoTagger.Repositories.Test.csproj", "{96F16852-B1BA-448C-AE8C-6EBA438E3D5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoTagger.Repositories.Test", "GeoTagger.Repositories.Test\GeoTagger.Repositories.Test.csproj", "{96F16852-B1BA-448C-AE8C-6EBA438E3D5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeoTagger.Web", "GeoTagger.Web\GeoTagger.Web.csproj", "{BD240D63-EAD1-49DD-9370-8CDEC2AE3675}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeoTagger.Web", "GeoTagger.Web\GeoTagger.Web.csproj", "{BD240D63-EAD1-49DD-9370-8CDEC2AE3675}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{06B3EA2D-133D-4B38-B85C-F56F29503C56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +83,11 @@ Global
 		{BD240D63-EAD1-49DD-9370-8CDEC2AE3675}.Release|x64.Build.0 = Release|Any CPU
 		{BD240D63-EAD1-49DD-9370-8CDEC2AE3675}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD240D63-EAD1-49DD-9370-8CDEC2AE3675}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EDB541A5-7A3D-432D-B195-B37BBE77687A}
 	EndGlobalSection
 EndGlobal

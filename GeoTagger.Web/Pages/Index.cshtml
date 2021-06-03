@@ -1,19 +1,16 @@
 ﻿@page
 @model IndexModel
-@{
-    ViewData["Title"] = "Home page";
-}
 
-@*<partial name="_FormResult" model="Model.FormResult" />*@
+<partial name="_FormResult" model="Model.FormResult" />
 
 <div class="row">
     <div class="col-6">
         <h2>Список объектов</h2>
     </div>
-    @*<div class="col-6 text-right mt-1">
+    <div class="col-6 text-right mt-1">
         <a asp-page="Create"
            class="btn btn-sm btn-secondary">Добавить</a>
-    </div>*@
+    </div>
 </div>
 
 <div class="row">
@@ -47,14 +44,17 @@
                             @(item.Address?.ToString() ?? "")
                         </td>
                         <td>
-                            @*<div class="btn-group btn-group-sm" role="group">
-                            <a asp-page="Edit" asp-route-Id="@item.Id" class="btn btn-primary">
-                                Изменить
-                            </a>
-                            <a asp-page="Delete" asp-route-Id="@item.Id" class="btn btn-danger">
-                                Удалить
-                            </a>
-                        </div>*@
+                            <div class="btn-group btn-group-sm" role="group">
+                                <a asp-area="User" asp-page="/Tags/Edit" asp-route-Id="@item.Id" class="btn btn-primary">
+                                    Изменить
+                                </a>
+                                <a asp-area="User" asp-page="/Tags/Detail" asp-route-Id="@item.Id" class="btn btn-success">
+                                    Показать
+                                </a>
+                                <a asp-area="User" asp-page="/Tags/Delete" asp-route-Id="@item.Id" class="btn btn-danger">
+                                    Удалить
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 }
